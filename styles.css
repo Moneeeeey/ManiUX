@@ -1,0 +1,484 @@
+/* ==========================================================================
+   Joshua Lucas — Portfolio
+   Dark, minimal, editorial. Wide/horizontal on laptop, single-column on phone.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap');
+
+:root {
+  --bg: #0b0b0c;
+  --bg-raised: #131315;
+  --text: #f2f1ee;
+  --text-dim: #8a8a8d;
+  --text-faint: #58585b;
+  --line: #232325;
+  --accent: #c9ff3d; /* single acid-lime accent, used only on hover/interactive states */
+
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Inter Tight', 'Inter', -apple-system, sans-serif;
+
+  --container: 1320px;   /* wide shell used by header, hero, project grid, footer */
+  --container-text: 760px; /* narrower measure for long-form paragraphs */
+  --edge: 56px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a { color: inherit; text-decoration: none; }
+img, video { max-width: 100%; display: block; }
+
+.wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--edge);
+}
+
+::selection { background: var(--accent); color: #0b0b0c; }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ---------------------------------- Header ---------------------------------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0 0;
+}
+
+.site-header .name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+.social-links { display: flex; gap: 26px; }
+
+.social-links a {
+  font-size: 13px;
+  color: var(--text-dim);
+  position: relative;
+  transition: color .25s ease;
+}
+.social-links a:hover { color: var(--text); }
+.social-links a::after {
+  content: '';
+  position: absolute; left: 0; right: 0; bottom: -4px;
+  height: 1px; background: var(--accent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .25s ease;
+}
+.social-links a:hover::after { transform: scaleX(1); }
+
+.back-home {
+  font-size: 13px;
+  color: var(--text-dim);
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: color .2s ease;
+}
+.back-home:hover { color: var(--text); }
+
+/* ---------------------------------- Hero (horizontal split) ---------------------------------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 80px;
+  align-items: end;
+  padding: 120px 0 80px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-main h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(30px, 3.6vw, 46px);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  margin: 0;
+  max-width: 15ch;
+  color: var(--text);
+}
+
+.tags { display: flex; gap: 8px; margin-bottom: 22px; }
+
+.tag {
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 5px 12px;
+}
+
+.hero-side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: 4px;
+}
+
+.hero-side p {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 34ch;
+}
+
+.hero-side .status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.status .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(201,255,61,.15);
+}
+
+/* ---------------------------------- Section label ---------------------------------- */
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  padding: 22px 0;
+}
+
+/* ---------------------------------- Project grid (horizontal cards) ---------------------------------- */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-bottom: 90px;
+}
+
+.project-card {
+  position: relative;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-raised);
+  transition: border-color .3s ease, transform .3s cubic-bezier(.22,1,.36,1);
+}
+
+.project-card:hover {
+  border-color: #343437;
+  transform: translateY(-4px);
+}
+
+.project-card .thumb {
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.project-card .thumb::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--card-color, #6ea8ff);
+  opacity: .16;
+  transition: opacity .35s ease, transform .5s ease;
+}
+
+.project-card:hover .thumb::before {
+  opacity: .3;
+  transform: scale(1.06);
+}
+
+/* cursor-tracked spotlight — a soft light that follows the pointer within the card */
+.project-card .spotlight {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .3s ease;
+  background: radial-gradient(180px circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,.14), transparent 70%);
+  pointer-events: none;
+}
+
+.project-card:hover .spotlight { opacity: 1; }
+
+.project-card .thumb .label {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.project-card .meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 20px;
+}
+
+.project-card .title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+}
+
+.project-card .arrow {
+  font-size: 16px;
+  color: var(--text-faint);
+  transition: transform .3s cubic-bezier(.22,1,.36,1), color .3s ease;
+}
+
+.project-card:hover .arrow {
+  transform: translateX(4px) translateY(-2px);
+  color: var(--accent);
+}
+
+/* ---------------------------------- Footer ---------------------------------- */
+
+.site-footer {
+  padding: 40px 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-faint);
+  font-size: 13px;
+  border-top: 1px solid var(--line);
+}
+
+/* ============================== Case study page ============================== */
+
+.cs-header { padding: 28px 0 0; }
+
+.cs-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  padding: 50px 0 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cs-hero .eyebrow {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+}
+
+.cs-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(30px, 4vw, 44px);
+  letter-spacing: -0.015em;
+  margin: 0 0 16px;
+}
+
+.cs-hero p.dek {
+  color: var(--text-dim);
+  font-size: 17px;
+  max-width: 44ch;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.cs-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 28px;
+  align-content: start;
+}
+
+.cs-meta div { font-size: 13px; color: var(--text-faint); }
+
+.cs-meta strong {
+  display: block;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.cs-media {
+  margin: 44px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.cs-media .placeholder {
+  aspect-ratio: 21/9;
+  background: linear-gradient(135deg, #17171a, #0e0e10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-faint);
+  font-size: 13px;
+  letter-spacing: .03em;
+}
+
+/* Horizontal split section: label/heading left, body copy + optional media right */
+.cs-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  padding: 56px 0;
+  border-top: 1px solid var(--line);
+}
+
+.cs-section .col-label { padding-top: 4px; }
+
+.cs-section .eyebrow {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cs-section h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(22px, 2.4vw, 28px);
+  letter-spacing: -0.01em;
+  margin: 14px 0 0;
+  max-width: 18ch;
+}
+
+.cs-section .col-body { max-width: var(--container-text); }
+
+.cs-section p {
+  color: var(--text-dim);
+  font-size: 16px;
+  max-width: 62ch;
+  margin: 0 0 16px;
+}
+
+.cs-section ul {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.cs-section ul li {
+  color: var(--text-dim);
+  font-size: 15px;
+  padding-left: 22px;
+  position: relative;
+  max-width: 62ch;
+}
+
+.cs-section ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--text-faint);
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.principle {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.principle h3 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.principle p {
+  font-size: 13.5px;
+  margin: 0;
+  color: var(--text-dim);
+}
+
+.callout {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--text);
+  max-width: 34ch;
+  margin: 0;
+}
+
+.stat-row {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  margin: 0;
+}
+
+/* ---------------------------------- Responsive ---------------------------------- */
+
+@media (max-width: 1080px) {
+  :root { --edge: 40px; }
+  .hero { grid-template-columns: 1fr; gap: 32px; align-items: start; }
+  .hero-side { max-width: none; }
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-hero { grid-template-columns: 1fr; gap: 28px; }
+  .cs-meta { grid-template-columns: repeat(4, 1fr); }
+  .cs-section { grid-template-columns: 1fr; gap: 18px; }
+  .principles { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  :root { --edge: 20px; }
+  .hero { padding: 90px 0 50px; }
+  .site-header { padding-top: 22px; }
+  .project-grid { grid-template-columns: 1fr; padding-bottom: 60px; }
+  .cs-meta { grid-template-columns: repeat(2, 1fr); }
+  .principles { grid-template-columns: 1fr; }
+  .stat-row { flex-direction: column; gap: 10px; }
+}
