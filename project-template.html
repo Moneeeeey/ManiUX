@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Name — Your Name</title>
+<meta name="description" content="One-sentence summary of the project and the outcome.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- =====================================================================
+     PROJECT PAGE TEMPLATE
+     This is the reusable case-study page. To add a real project:
+       1. Duplicate this file (e.g. cp project-template.html my-project.html)
+       2. Replace the bracketed placeholder copy throughout
+       3. Swap the gradient placeholder blocks (.project-cover,
+          .gallery__item) for real <img>/<video> elements
+       4. Point the matching card on index.html at the new filename
+       5. Update the "next project" link at the bottom
+     project-1.html / project-2.html / project-3.html are working copies
+     of this exact template, already wired to the homepage.
+     ===================================================================== -->
+
+<div class="page">
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="site-header__left">
+      <a class="brand" href="index.html">Your Name</a>
+      <a class="back-link" href="index.html">← All work</a>
+    </div>
+    <nav class="nav-pills">
+      <a class="pill-btn" href="#" target="_blank" rel="noopener"><span>Twitter</span></a>
+      <a class="pill-btn" href="#" target="_blank" rel="noopener"><span>LinkedIn</span></a>
+      <a class="pill-btn" href="#" target="_blank" rel="noopener"><span>Behance</span></a>
+    </nav>
+  </header>
+
+  <!-- ================= PROJECT HERO ================= -->
+  <section class="project-hero">
+    <p class="project-hero__eyebrow">Case study</p>
+    <h1 class="project-hero__title">Project Name Goes Here</h1>
+
+    <div class="project-meta">
+      <span class="project-meta__item"><strong>Company</strong>Company Name</span>
+      <span class="project-meta__item"><strong>Role</strong>Your Role</span>
+      <span class="project-meta__item"><strong>Duration</strong>X months</span>
+      <span class="project-meta__item"><strong>Shipped</strong>Month Year</span>
+    </div>
+
+    <div class="project-cover" data-observe>Hero image or video placeholder</div>
+  </section>
+
+  <!-- ================= MARQUEE (reused from homepage) ================= -->
+  <div class="marquee" data-marquee>
+    <div class="marquee__track">
+      <span>CASE STUDIES&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN PROCESS</span>
+      <span>CASE STUDIES&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN PROCESS</span>
+      <span>CASE STUDIES&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN PROCESS</span>
+      <span>CASE STUDIES&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN PROCESS</span>
+      <span>CASE STUDIES&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN PROCESS</span>
+      <span>CASE STUDIES&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN PROCESS</span>
+    </div>
+  </div>
+
+  <!-- ================= OVERVIEW ================= -->
+  <section class="section" data-observe>
+    <p class="section__label">Overview</p>
+    <div class="section__body">
+      <h2>The context behind the work.</h2>
+      <p>[One or two paragraphs setting up the problem: what existed before, why it needed to change, and what constraints — technical, business, or timeline — shaped the project.]</p>
+      <p>[Optional second paragraph — team you worked with, your specific role, and what success would look like.]</p>
+    </div>
+  </section>
+
+  <!-- ================= PROBLEM ================= -->
+  <section class="section" data-observe>
+    <p class="section__label">The problem</p>
+    <div class="section__body">
+      <h2>What wasn't working.</h2>
+      <p>[Describe the core pain points you uncovered through research, data, or direct feedback. Keep it specific — numbers and quotes are more convincing than adjectives.]</p>
+      <div class="gallery">
+        <div class="gallery__item" style="--grad-a:#eef1ff; --grad-b:#fafbff;">Research artifact</div>
+        <div class="gallery__item" style="--grad-a:#fff0ea; --grad-b:#fffaf7;">Old flow screenshot</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PULL QUOTE ================= -->
+  <div class="pull-quote" data-observe>
+    <p>"[A short, memorable line — a design principle you kept coming back to, or a quote from user research that captures the stakes.]"</p>
+  </div>
+
+  <!-- ================= APPROACH ================= -->
+  <section class="section" data-observe>
+    <p class="section__label">The approach</p>
+    <div class="section__body">
+      <h2>How the solution took shape.</h2>
+      <p>[Walk through the key design decisions: the exploration, what you tried and rejected, and why the final direction won. Link this back to the principles/constraints from the overview.]</p>
+      <div class="gallery">
+        <div class="gallery__item" style="--grad-a:#e7f7ee; --grad-b:#f7fdf9;">Wireframe / sketch</div>
+        <div class="gallery__item" style="--grad-a:#fdeef5; --grad-b:#fff8fb;">Final UI detail</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUTCOME / STATS ================= -->
+  <section class="section" data-observe>
+    <p class="section__label">The outcome</p>
+    <div class="section__body">
+      <h2>What shipped, and what it moved.</h2>
+      <p>[Summarize the shipped result and, if available, the measurable impact — conversion, retention, satisfaction, adoption.]</p>
+    </div>
+  </section>
+
+  <div class="stats-row">
+    <div class="stat">
+      <span class="stat__value">+00%</span>
+      <span class="stat__label">Metric one</span>
+    </div>
+    <div class="stat">
+      <span class="stat__value">00%</span>
+      <span class="stat__label">Metric two</span>
+    </div>
+    <div class="stat">
+      <span class="stat__value">00k</span>
+      <span class="stat__label">Metric three</span>
+    </div>
+  </div>
+
+  <!-- ================= NEXT PROJECT ================= -->
+  <a class="next-project" href="project-2.html">
+    <div>
+      <span class="next-project__label">Next project</span>
+      <span class="next-project__title">Project Two</span>
+    </div>
+    <svg class="next-project__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+  </a>
+
+  <footer class="site-footer">
+    <span>© 2026 Your Name</span>
+    <a href="index.html">Back to all work →</a>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

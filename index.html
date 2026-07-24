@@ -3,67 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joshua Lucas — Product Designer</title>
-<meta name="description" content="San Francisco based Product Designer, currently at Google.">
+<title>Your Name — Product Designer</title>
+<meta name="description" content="City, State based Product Designer, currently at Company.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- 
-  
-<header class="site-header wrap">
-  <div class="name">Mani Atasay</div>
-  <nav class="social-links">
-    <a href="https://twitter.com/shualucas" target="_blank" rel="noopener">Twitter</a>
-    <a href="https://www.linkedin.com/in/joshglucas/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://www.behance.net/shuakosh" target="_blank" rel="noopener">Behance</a>
-  </nav>
-</header>
 
-<main class="wrap">
+<div class="page">
 
+  <!-- ================= HEADER =================
+       Replace "Your Name" and the three social links below. -->
+  <header class="site-header">
+    <a class="brand" href="index.html">Your Name</a>
+    <nav class="nav-pills">
+      <a class="pill-btn" href="#" target="_blank" rel="noopener"><span>Twitter</span></a>
+      <a class="pill-btn" href="#" target="_blank" rel="noopener"><span>LinkedIn</span></a>
+      <a class="pill-btn" href="#" target="_blank" rel="noopener"><span>Behance</span></a>
+    </nav>
+  </header>
+
+  <!-- ================= HERO =================
+       Replace the tagline below, and the location / company text. -->
   <section class="hero">
-    <div class="hero-main">
-      <div class="tags">
-        <span class="tag">San Francisco</span>
-        <span class="tag">Google</span>
-      </div>
-      <h1>Joshua is a product designer with a passion for creating beautiful yet intuitive experiences at scale.</h1>
+    <div class="hero__blobs" aria-hidden="true">
+      <div class="hero__blob hero__blob--1"></div>
+      <div class="hero__blob hero__blob--2"></div>
+      <div class="hero__blob hero__blob--3"></div>
+      <div class="hero__blob hero__blob--4"></div>
     </div>
-    
+
+    <div class="hero__content">
+      <h1 class="hero__tagline" data-reveal-text>Your Name is a product designer with a passion for creating beautiful yet intuitive experiences at scale.</h1>
+
+      <div class="hero__meta">
+        <span class="meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-4.2 0-8 3.22-8 8.2 0 3.18 2.45 6.92 7.34 11.23.38.33.95.33 1.33 0C17.55 17.12 20 13.38 20 10.2 20 5.22 16.2 2 12 2zm0 10c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+          Your City
+        </span>
+        <span class="meta-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+          Your Company
+        </span>
+      </div>
+    </div>
   </section>
 
-  <div class="section-label">Case studies · Design process</div>
-
-  <div class="project-grid">
-    <a class="project-card" href="stadia.html" style="--card-color:#c9ff3d">
-      <div class="thumb"><span class="label">Search Labs</span><span class="spotlight"></span></div>
-      <div class="meta">
-        <span class="title">Search Labs</span>
-        <span class="arrow">→</span>
-      </div>
-    </a>
-    <a class="project-card" href="stadia.html" style="--card-color:#6ea8ff">
-      <div class="thumb"><span class="label">Stadia Store</span><span class="spotlight"></span></div>
-      <div class="meta">
-        <span class="title">Stadia Store Redesign</span>
-        <span class="arrow">→</span>
-      </div>
-    </a>
-    <a class="project-card" href="stadia.html" style="--card-color:#ff8a4c">
-      <div class="thumb"><span class="label">AI Mode</span><span class="spotlight"></span></div>
-      <div class="meta">
-        <span class="title">AI Mode</span>
-        <span class="arrow">→</span>
-      </div>
-    </a>
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" data-marquee>
+    <div class="marquee__track">
+      <span>CASE STUDIES&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN PROCESS</span>
+      <span>CASE STUDIES&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN PROCESS</span>
+      <span>CASE STUDIES&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN PROCESS</span>
+      <span>CASE STUDIES&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN PROCESS</span>
+      <span>CASE STUDIES&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN PROCESS</span>
+      <span>CASE STUDIES&nbsp;&nbsp;|&nbsp;&nbsp;DESIGN PROCESS</span>
+    </div>
   </div>
 
-</main>
+  <!-- ================= PROJECTS =================
+       Each card links to project-template.html (duplicate it for real
+       case studies — see README.md). Swap --grad-a / --grad-b / --icon-bg
+       and the placeholder label for a real <img> or <video> once you
+       have project imagery. -->
+  <section class="projects">
 
-<footer class="site-footer wrap">
-  <span>© 2026 Joshua Lucas</span>
-  <span>Built with care in San Francisco</span>
-</footer>
+    <a class="project-card" href="project-1.html" style="--grad-a:#dfe7ff; --grad-b:#f3f6ff; --icon-bg:#3b5bfa">
+      <div class="project-card__media">
+        <div class="project-card__placeholder-label">Project image<br>placeholder</div>
+      </div>
+      <div class="project-card__tag">
+        <span class="project-card__icon" aria-hidden="true"></span>
+        <span class="project-card__name">Project One</span>
+        <svg class="project-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </div>
+    </a>
+
+    <a class="project-card" href="project-2.html" style="--grad-a:#ffe1d6; --grad-b:#fff5ef; --icon-bg:#ff6a3d">
+      <div class="project-card__media">
+        <div class="project-card__placeholder-label">Project image<br>placeholder</div>
+      </div>
+      <div class="project-card__tag">
+        <span class="project-card__icon" aria-hidden="true"></span>
+        <span class="project-card__name">Project Two</span>
+        <svg class="project-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </div>
+    </a>
+
+    <a class="project-card" href="project-3.html" style="--grad-a:#d9f2e3; --grad-b:#f1fbf5; --icon-bg:#1f9d5c">
+      <div class="project-card__media">
+        <div class="project-card__placeholder-label">Project image<br>placeholder</div>
+      </div>
+      <div class="project-card__tag">
+        <span class="project-card__icon" aria-hidden="true"></span>
+        <span class="project-card__name">Project Three</span>
+        <svg class="project-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </div>
+    </a>
+
+  </section>
+
+  <footer class="site-footer">
+    <span>© 2026 Your Name</span>
+    <a href="#">Back to top ↑</a>
+  </footer>
+
+</div>
 
 <script src="script.js"></script>
 </body>
