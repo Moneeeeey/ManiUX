@@ -20,11 +20,7 @@
 	--color-marquee-bg: #fcfdff;
 
 	--color-hero-base: #ff6a4d;
-	--color-hero-edge: #ff3f27;
-	--color-blob-orange: #ff9a56;
-	--color-blob-pink: #ff6fae;
-	--color-blob-violet: #b98cff;
-	--color-blob-red: #ff5c5c;
+	--color-hero-edge: #000000;
 
 	--radius-hero: 48px;
 	--radius-card: 32px;
@@ -201,72 +197,21 @@ button:focus-visible {
 	padding: 64px 32px 96px;
 }
 
-.hero__blobs {
+.hero__video {
 	position: absolute;
 	inset: 0;
-	filter: blur(80px);
-	mix-blend-mode: hard-light;
-	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: blur(24px);
+	transform: scale(1.1);
 }
 
-.hero__blob {
+.hero__overlay {
 	position: absolute;
-	border-radius: 50%;
-	opacity: 0.85;
-	animation: drift 24s ease-in-out infinite;
-}
-
-.hero__blob--1 {
-	width: 46%;
-	height: 90%;
-	left: -10%;
-	top: -10%;
-	background: var(--color-blob-orange);
-	animation-duration: 26s;
-}
-
-.hero__blob--2 {
-	width: 40%;
-	height: 80%;
-	right: -8%;
-	top: 0%;
-	background: var(--color-blob-pink);
-	animation-duration: 19s;
-	animation-direction: reverse;
-}
-
-.hero__blob--3 {
-	width: 36%;
-	height: 70%;
-	left: 32%;
-	bottom: -20%;
-	background: var(--color-blob-violet);
-	animation-duration: 24s;
-}
-
-.hero__blob--4 {
-	width: 30%;
-	height: 60%;
-	right: 20%;
-	bottom: -10%;
-	background: var(--color-blob-red);
-	animation-duration: 17s;
-	animation-direction: reverse;
-}
-
-@keyframes drift {
-	0% {
-		transform: translate(0, 0) scale(1);
-	}
-	33% {
-		transform: translate(6%, -8%) scale(1.08);
-	}
-	66% {
-		transform: translate(-5%, 6%) scale(0.96);
-	}
-	100% {
-		transform: translate(0, 0) scale(1);
-	}
+	inset: 0;
+	background: black;
+	opacity: 0.45;
 }
 
 .hero__content {
@@ -343,7 +288,8 @@ button:focus-visible {
    ------------------------------------------------------------------ */
 
 .marquee {
-	margin: 24px 0;
+	width: 100vw;
+	margin: 24px 0 24px calc(50% - 50vw);
 	border: 1px solid var(--color-border-strong);
 	background: var(--color-marquee-bg);
 	border-radius: var(--radius-marquee);
@@ -416,12 +362,17 @@ button:focus-visible {
 .project-card {
 	position: relative;
 	display: block;
-	aspect-ratio: 4 / 5;
+	aspect-ratio: 4 / 3;
 	border-radius: var(--radius-card);
 	background: #f5f5f5;
 	padding: 12px;
 	opacity: 0.9;
 	transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.project-card--wide {
+	grid-column: 1 / -1;
+	aspect-ratio: 21 / 6;
 }
 
 .project-card:hover {
@@ -820,6 +771,10 @@ button:focus-visible {
 	}
 
 	.project-card {
+		aspect-ratio: 16 / 11;
+	}
+
+	.project-card--wide {
 		aspect-ratio: 16 / 11;
 	}
 
