@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap');
 
 :root {
-  --bg: #0b0b0c;
+  --bg: #ffffff;
   --bg-raised: #131315;
   --text: #f2f1ee;
   --text-dim: #8a8a8d;
@@ -68,6 +68,7 @@ a:focus-visible, button:focus-visible {
   font-weight: 600;
   font-size: 15px;
   letter-spacing: -0.01em;
+  color: #0b0b0c;
 }
 
 .social-links { display: flex; gap: 26px; }
@@ -77,6 +78,7 @@ a:focus-visible, button:focus-visible {
   color: var(--text-dim);
   position: relative;
   transition: color .25s ease;
+  color: #0000FF;
 }
 .social-links a:hover { color: var(--text); }
 .social-links a::after {
@@ -100,11 +102,11 @@ a:focus-visible, button:focus-visible {
 
 .hero {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 80px;
   align-items: end;
-  padding: 120px 0 80px;
-  border-bottom: 1px solid var(--line);
+  padding: 120px  80px;
+  background-color: #0000dc;
+  border-radius: 10vh; 
+
 }
 
 .hero-main h1 {
@@ -114,7 +116,6 @@ a:focus-visible, button:focus-visible {
   line-height: 1.18;
   letter-spacing: -0.015em;
   margin: 0;
-  max-width: 15ch;
   color: var(--text);
 }
 
