@@ -292,8 +292,8 @@ button:focus-visible {
    ------------------------------------------------------------------ */
 
 .marquee {
-	width: 100vw;
-	margin: 24px 0 24px calc(50% - 50vw);
+	width: 110vw;
+	margin: 24px 0 24px calc(45% - 50vw);
 	border: 1px solid var(--color-border-strong);
 	background: var(--color-marquee-bg);
 	border-radius: var(--radius-marquee);
@@ -368,8 +368,8 @@ button:focus-visible {
 	display: block;
 	aspect-ratio: 4 / 3;
 	border-radius: var(--radius-card);
-	background: #f5f5f5;
-	padding: 12px;
+	border: 1px solid var(--color-border);
+	overflow: hidden;
 	opacity: 0.9;
 	transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
 }
@@ -594,6 +594,7 @@ button:focus-visible {
 	gap: 48px;
 	padding: 64px 0;
 	border-top: 1px solid #ececec;
+	
 }
 
 .section__label {
@@ -603,6 +604,7 @@ button:focus-visible {
 	letter-spacing: 0.06em;
 	color: var(--color-text-soft);
 	margin: 0;
+
 }
 
 .section__body {
@@ -615,6 +617,7 @@ button:focus-visible {
 	font-size: 28px;
 	letter-spacing: -0.03em;
 	margin: 0 0 16px;
+	color: blue;
 }
 
 .section__body p {
