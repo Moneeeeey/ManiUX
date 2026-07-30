@@ -15,6 +15,7 @@
 	--color-text-soft: #6b6b6b;
 	--color-border: #a6a6a6;
 	--color-border-strong: #111111;
+	--color-fact-title: blue; 
 	--color-card-bg: #f2f2f2;
 	--color-pill-bg: #ffffff;
 	--color-marquee-bg: #fcfdff;
@@ -718,7 +719,7 @@ button:focus-visible {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 24px;
-	padding: 48px 0 64px;
+	padding-top: 48px;
 	border-top: 1px solid #ececec;
 }
 
@@ -732,6 +733,7 @@ button:focus-visible {
 	font-size: 48px;
 	display: block;
 	margin-bottom: 8px;
+	color: rgb(63, 63, 255);
 }
 
 .stat__label {
@@ -854,7 +856,7 @@ button:focus-visible {
 	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
-	color: var(--color-text-soft);
+	color: var(--color-fact-title);
 	margin: 0 0 10px;
 }
 
