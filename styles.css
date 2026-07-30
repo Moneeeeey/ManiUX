@@ -1024,7 +1024,7 @@ button:focus-visible {
 
 .video-frame--wide {
 	max-width: 100%;
-	aspect-ratio: 16 / 9;
+	aspect-ratio: 3 / 2;
 	background: #000000;
 	display: flex;
 	align-items: center;
